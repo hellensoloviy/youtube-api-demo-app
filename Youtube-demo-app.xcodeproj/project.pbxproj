@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		9BC23D3329E90BAB003AD8E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D3229E90BAB003AD8E4 /* AppDelegate.swift */; };
 		9BC23D3529E90BAB003AD8E4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D3429E90BAB003AD8E4 /* SceneDelegate.swift */; };
-		9BC23D3729E90BAB003AD8E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D3629E90BAB003AD8E4 /* ViewController.swift */; };
 		9BC23D3A29E90BAB003AD8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC23D3829E90BAB003AD8E4 /* Main.storyboard */; };
 		9BC23D3C29E90BAE003AD8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC23D3B29E90BAE003AD8E4 /* Assets.xcassets */; };
 		9BC23D3F29E90BAE003AD8E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC23D3D29E90BAE003AD8E4 /* LaunchScreen.storyboard */; };
+		9BC23D4B29E91D7B003AD8E4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D4A29E91D7B003AD8E4 /* SearchViewController.swift */; };
+		9BC23D4E29E91E57003AD8E4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D4D29E91E57003AD8E4 /* Endpoint.swift */; };
+		9BC23D5029E91ED0003AD8E4 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D4F29E91ED0003AD8E4 /* RequestError.swift */; };
+		9BC23D5229E91EF0003AD8E4 /* URLRequest+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D5129E91EF0003AD8E4 /* URLRequest+Setup.swift */; };
+		9BC23D5629E91F61003AD8E4 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D5529E91F61003AD8E4 /* SearchEndpoint.swift */; };
+		9BC23D5829E91FC4003AD8E4 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D5729E91FC4003AD8E4 /* SearchService.swift */; };
+		9BC23D5B29E92018003AD8E4 /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D5A29E92018003AD8E4 /* SearchResultModel.swift */; };
+		9BC23D5D29E921E4003AD8E4 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D5C29E921E4003AD8E4 /* NetworkClient.swift */; };
 		9EAA94B94B869EA7A027A3E2 /* Pods_Youtube_demo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A9DE5D3BE132D034B64D /* Pods_Youtube_demo_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +29,18 @@
 		9BC23D2F29E90BAB003AD8E4 /* Youtube-demo-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Youtube-demo-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC23D3229E90BAB003AD8E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC23D3429E90BAB003AD8E4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9BC23D3629E90BAB003AD8E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9BC23D3929E90BAB003AD8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9BC23D3B29E90BAE003AD8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC23D3E29E90BAE003AD8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9BC23D4029E90BAE003AD8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC23D4A29E91D7B003AD8E4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9BC23D4D29E91E57003AD8E4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		9BC23D4F29E91ED0003AD8E4 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		9BC23D5129E91EF0003AD8E4 /* URLRequest+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Setup.swift"; sourceTree = "<group>"; };
+		9BC23D5529E91F61003AD8E4 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
+		9BC23D5729E91FC4003AD8E4 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		9BC23D5A29E92018003AD8E4 /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		9BC23D5C29E921E4003AD8E4 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		CEF004122947916BB6D5AE12 /* Pods-Youtube-demo-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube-demo-app.release.xcconfig"; path = "Target Support Files/Pods-Youtube-demo-app/Pods-Youtube-demo-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -48,7 +62,6 @@
 				1C96F7A5A645046F6DA5DF1C /* Pods-Youtube-demo-app.debug.xcconfig */,
 				CEF004122947916BB6D5AE12 /* Pods-Youtube-demo-app.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -73,15 +86,86 @@
 		9BC23D3129E90BAB003AD8E4 /* Youtube-demo-app */ = {
 			isa = PBXGroup;
 			children = (
+				9BC23D4929E91D4F003AD8E4 /* Common */,
+				9BC23D4829E91D46003AD8E4 /* ViewControllers */,
+				9BC23D4729E91D3E003AD8E4 /* Network */,
 				9BC23D3229E90BAB003AD8E4 /* AppDelegate.swift */,
 				9BC23D3429E90BAB003AD8E4 /* SceneDelegate.swift */,
-				9BC23D3629E90BAB003AD8E4 /* ViewController.swift */,
-				9BC23D3829E90BAB003AD8E4 /* Main.storyboard */,
+				9BC23D4629E91C2A003AD8E4 /* Storyboards */,
 				9BC23D3B29E90BAE003AD8E4 /* Assets.xcassets */,
-				9BC23D3D29E90BAE003AD8E4 /* LaunchScreen.storyboard */,
 				9BC23D4029E90BAE003AD8E4 /* Info.plist */,
 			);
 			path = "Youtube-demo-app";
+			sourceTree = "<group>";
+		};
+		9BC23D4629E91C2A003AD8E4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D3829E90BAB003AD8E4 /* Main.storyboard */,
+				9BC23D3D29E90BAE003AD8E4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		9BC23D4729E91D3E003AD8E4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D5929E91FF2003AD8E4 /* Models */,
+				9BC23D5429E91F12003AD8E4 /* Endpoints */,
+				9BC23D5329E91F0C003AD8E4 /* Services */,
+				9BC23D4C29E91E4C003AD8E4 /* Common */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9BC23D4829E91D46003AD8E4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D4A29E91D7B003AD8E4 /* SearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9BC23D4929E91D4F003AD8E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9BC23D4C29E91E4C003AD8E4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D4D29E91E57003AD8E4 /* Endpoint.swift */,
+				9BC23D4F29E91ED0003AD8E4 /* RequestError.swift */,
+				9BC23D5129E91EF0003AD8E4 /* URLRequest+Setup.swift */,
+				9BC23D5C29E921E4003AD8E4 /* NetworkClient.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9BC23D5329E91F0C003AD8E4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D5729E91FC4003AD8E4 /* SearchService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		9BC23D5429E91F12003AD8E4 /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D5529E91F61003AD8E4 /* SearchEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		9BC23D5929E91FF2003AD8E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9BC23D5A29E92018003AD8E4 /* SearchResultModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CEF0ADE85EB4B5BC30FAD9B2 /* Frameworks */ = {
@@ -189,8 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BC23D3729E90BAB003AD8E4 /* ViewController.swift in Sources */,
+				9BC23D4B29E91D7B003AD8E4 /* SearchViewController.swift in Sources */,
+				9BC23D5D29E921E4003AD8E4 /* NetworkClient.swift in Sources */,
+				9BC23D5029E91ED0003AD8E4 /* RequestError.swift in Sources */,
+				9BC23D5B29E92018003AD8E4 /* SearchResultModel.swift in Sources */,
 				9BC23D3329E90BAB003AD8E4 /* AppDelegate.swift in Sources */,
+				9BC23D5229E91EF0003AD8E4 /* URLRequest+Setup.swift in Sources */,
+				9BC23D5629E91F61003AD8E4 /* SearchEndpoint.swift in Sources */,
+				9BC23D5829E91FC4003AD8E4 /* SearchService.swift in Sources */,
+				9BC23D4E29E91E57003AD8E4 /* Endpoint.swift in Sources */,
 				9BC23D3529E90BAB003AD8E4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
