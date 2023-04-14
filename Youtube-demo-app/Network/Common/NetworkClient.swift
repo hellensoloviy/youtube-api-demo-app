@@ -16,6 +16,8 @@ extension NetworkClient {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type) -> AnyPublisher<T, RequestError> {
         let request = URLRequest.setup(using: endpoint)
         
+        print("---- Try Request with URL \(String(describing: request.url))") // TODO: -
+        
         return URLSession.shared.dataTaskPublisher(for: request)
                     .map(\.data)
                     .decode(type: T.self, decoder: JSONDecoder())

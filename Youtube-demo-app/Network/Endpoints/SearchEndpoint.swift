@@ -15,14 +15,14 @@ extension SearchEndpoint: Endpoint {
     var path: String {
         switch self {
         case .searchVideo:
-            return "/search"
+            return "/youtube/v3/search"
         }
     }
 
     var queryItems: [URLQueryItem]? {
         switch self {
         case .searchVideo(let name):
-            return [.init(name: "q", value: name)]
+            return [.init(name: "q", value: name), self.defaultQueryItem, .init(name: "part", value: "snippet")]
 
         }
     }

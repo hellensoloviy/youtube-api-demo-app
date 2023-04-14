@@ -10,7 +10,7 @@ import Foundation
 // TODO: - See correct model to get
 // https://developers.google.com/youtube/v3/docs/search/list?apix_params=%7B%22part%22%3A%5B%22Sekiro%22%5D%7D#usage
 //
-class PageInfo: Codable {
+class PageInfoModel: Codable {
     var totalResults: Int
     var resultsPerPage: Int
     
@@ -19,11 +19,59 @@ class PageInfo: Codable {
     }
 }
 
-class VideoSnippet: Codable {
+class VideoModel: Codable {
+    var dateAdded: String
+    var channelId: String
+    var title: String
+    var description: String
+    
+    var thumbnails: VideoThumbnailsModel? // medium ?
+    
+    enum CodingKeys: String, CodingKey {
+        case channelId, title, description, thumbnails
+        case dateAdded = "publishedAt"
+    }
+}
+
+class VideoThumbnailsModel: Codable {
+    class ThambnailDetailsModel: Codable {
+        var url: String
+            
+        enum CodingKeys: String, CodingKey {
+            case url
+        }
+    }
+    
+    var medium: ThambnailDetailsModel?
+    var high: ThambnailDetailsModel?
+
+        
+    enum CodingKeys: String, CodingKey {
+        case medium, high
+    }
+}
+
+class VideoSnippetModel: Codable {
+    
     var kind: String
+    var snippet: VideoModel?
     
     enum CodingKeys: String, CodingKey {
         case kind
+        case snippet
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        snippet = try container.decode(VideoModel.self, forKey: .snippet)
+        kind = try container.decode(String.self, forKey: .kind)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.snippet, forKey: .snippet)
+        try container.encode(self.kind, forKey: .kind)
     }
     
 }
@@ -34,8 +82,8 @@ class SearchResultModel: Codable {
     var nextPageToken: String?
     var regionCode: String
     
-    var pageInfo: PageInfo
-    var items: [VideoSnippet]?
+    var pageInfo: PageInfoModel
+    var items: [VideoSnippetModel]?
         
     enum CodingKeys: String, CodingKey {
         case kind

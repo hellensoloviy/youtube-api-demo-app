@@ -23,6 +23,7 @@ protocol Endpoint {
     var header: [String: String]? { get }
     var body: [String: String]? { get }
     var queryItems: [URLQueryItem]? { get }
+    var defaultQueryItem: URLQueryItem { get }
 }
 
 extension Endpoint {
@@ -31,15 +32,18 @@ extension Endpoint {
     }
     
     var host: String {
-        return "googleapis.com/youtube/v3"
+        return "www.googleapis.com"
     }
     
     var header: [String: String]? {
         return [
             "Content-Type": "application/json",
             "Accept": "application/json",
-            "User-Agent": "Youtube-demo-app-ios",
-            "Key": "AIzaSyDkV_Cq-ES_E-4bM8RdJ3nqVGUdsaIWHN8" // API key created in developer console
+            "User-Agent": "Youtube-demo-app-ios"
         ]
+    }
+    
+    var defaultQueryItem: URLQueryItem {
+        return URLQueryItem(name: "key", value: "AIzaSyDkV_Cq-ES_E-4bM8RdJ3nqVGUdsaIWHN8")
     }
 }
