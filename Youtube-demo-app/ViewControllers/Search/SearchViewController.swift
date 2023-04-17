@@ -49,6 +49,7 @@ class SearchViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.restoreSearch), name: LastSearchManager().getNotificationName(), object: nil)
         setupSubscriptions()
     }
     
@@ -56,6 +57,8 @@ class SearchViewController: UIViewController {
         subscriptions.forEach({ $0.cancel() })
         searchSubscription?.cancel()
         subscriptions.removeAll()
+        
+        NotificationCenter.default.removeObserver(self)
         super.viewWillDisappear(animated)
     }
     
@@ -102,6 +105,7 @@ class SearchViewController: UIViewController {
     
     private func search(for keyword: String = "") {
         isActionInProgress = true
+        saveSearch(keyword)
 
         searchSubscription = SearchService().searchVideo(for: keyword).sink { error in
             switch error {
@@ -128,7 +132,21 @@ class SearchViewController: UIViewController {
         }
 
     }
+
+}
+
+// MARK: - Last Search
+extension SearchViewController: LastSearchManagerRespondable {
+    @objc internal func restoreSearch() {
+        guard let lastSearch = LastSearchManager().restore(), !lastSearch.isEmpty else { return }
+        
+        searchSubscription?.cancel()
+        search(for: lastSearch)
+    }
     
+    func saveSearch(_ keyword: String) {
+        LastSearchManager().save(keyword)
+    }
 }
 
 //MARK: - TableView DataSource
