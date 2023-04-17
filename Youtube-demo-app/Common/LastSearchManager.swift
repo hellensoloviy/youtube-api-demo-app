@@ -14,7 +14,6 @@ protocol LastSearchManagerRespondable {
 
 struct LastSearchManager {
     private let key = "you-tube-custom-app.demo-lastSerchedItemKey"
-    private let notificationName = Notification.Name("you-tube-custom-app.demo-lastSerched-Notification")
     
     func save(_ keyword: String) {
         UserDefaults.standard.set(keyword, forKey: self.key)
@@ -23,13 +22,4 @@ struct LastSearchManager {
     func restore() -> String? {
         UserDefaults.standard.string(forKey: self.key)
     }
-    
-    func getNotificationName() -> Notification.Name {
-        return self.notificationName
-    }
-    
-    func sendNotification() {
-        NotificationCenter.default.post(Notification(name: self.notificationName))
-    }
-    
 }

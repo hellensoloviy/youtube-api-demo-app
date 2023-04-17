@@ -25,6 +25,7 @@
 		9BC23D6629E92BD5003AD8E4 /* UIViewController+Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D6529E92BD5003AD8E4 /* UIViewController+Alertable.swift */; };
 		9BC23D6829E935A7003AD8E4 /* URLSession+ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D6729E935A7003AD8E4 /* URLSession+ImageLoading.swift */; };
 		9BC23D6A29ED285E003AD8E4 /* LastSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D6929ED285E003AD8E4 /* LastSearchManager.swift */; };
+		9BC23D6C29ED319F003AD8E4 /* ShortcutAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC23D6B29ED319F003AD8E4 /* ShortcutAction.swift */; };
 		9EAA94B94B869EA7A027A3E2 /* Pods_Youtube_demo_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F65A9DE5D3BE132D034B64D /* Pods_Youtube_demo_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		9BC23D6529E92BD5003AD8E4 /* UIViewController+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alertable.swift"; sourceTree = "<group>"; };
 		9BC23D6729E935A7003AD8E4 /* URLSession+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ImageLoading.swift"; sourceTree = "<group>"; };
 		9BC23D6929ED285E003AD8E4 /* LastSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastSearchManager.swift; sourceTree = "<group>"; };
+		9BC23D6B29ED319F003AD8E4 /* ShortcutAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutAction.swift; sourceTree = "<group>"; };
 		CEF004122947916BB6D5AE12 /* Pods-Youtube-demo-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube-demo-app.release.xcconfig"; path = "Target Support Files/Pods-Youtube-demo-app/Pods-Youtube-demo-app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				9BC23D6529E92BD5003AD8E4 /* UIViewController+Alertable.swift */,
 				9BC23D6729E935A7003AD8E4 /* URLSession+ImageLoading.swift */,
 				9BC23D6929ED285E003AD8E4 /* LastSearchManager.swift */,
+				9BC23D6B29ED319F003AD8E4 /* ShortcutAction.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				9BC23D6A29ED285E003AD8E4 /* LastSearchManager.swift in Sources */,
 				9BC23D3329E90BAB003AD8E4 /* AppDelegate.swift in Sources */,
 				9BC23D6629E92BD5003AD8E4 /* UIViewController+Alertable.swift in Sources */,
+				9BC23D6C29ED319F003AD8E4 /* ShortcutAction.swift in Sources */,
 				9BC23D5229E91EF0003AD8E4 /* URLRequest+Setup.swift in Sources */,
 				9BC23D5629E91F61003AD8E4 /* SearchEndpoint.swift in Sources */,
 				9BC23D5829E91FC4003AD8E4 /* SearchService.swift in Sources */,
