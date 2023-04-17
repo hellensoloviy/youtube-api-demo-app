@@ -30,6 +30,8 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    private let actionService = ShortcutActionService.shared
+
     private var fullModel: SearchResultModel? = nil
     @Published  private var dataSource: [VideoSnippetModel]? = nil
     
@@ -48,7 +50,6 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setupSubscriptions()
     }
     
@@ -56,6 +57,7 @@ class SearchViewController: UIViewController {
         subscriptions.forEach({ $0.cancel() })
         searchSubscription?.cancel()
         subscriptions.removeAll()
+        
         super.viewWillDisappear(animated)
     }
     
@@ -78,15 +80,20 @@ class SearchViewController: UIViewController {
             self.isActionInProgress = false
         }.store(in: &subscriptions)
         
-        $isActionInProgress.sink(receiveValue: { [weak self] new in
+        $isActionInProgress.receive(on: DispatchQueue.main).sink(receiveValue: { [weak self] new in
             guard let self = self, new != self.isActionInProgress else { return }
 
-            DispatchQueue.main.async {
                 self.spinner.isHidden = !new
                 self.tableView.isHidden = new || !self.state.shouldShowList
                 new ? self.spinner.startAnimating() : self.spinner.stopAnimating()
-            }
         }).store(in: &subscriptions)
+        
+        actionService.objectWillChange
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] new in
+                guard let self = self else { return }
+                self.restoreSearch()
+        }.store(in: &subscriptions)
         
     }
     
@@ -102,6 +109,7 @@ class SearchViewController: UIViewController {
     
     private func search(for keyword: String = "") {
         isActionInProgress = true
+        saveSearch(keyword)
 
         searchSubscription = SearchService().searchVideo(for: keyword).sink { error in
             switch error {
@@ -128,7 +136,21 @@ class SearchViewController: UIViewController {
         }
 
     }
+
+}
+
+// MARK: - Last Search
+extension SearchViewController: LastSearchManagerRespondable {
+    @objc internal func restoreSearch() {
+        guard let lastSearch = LastSearchManager().restore(), !lastSearch.isEmpty else { return }
+        
+        searchSubscription?.cancel()
+        search(for: lastSearch)
+    }
     
+    func saveSearch(_ keyword: String) {
+        LastSearchManager().save(keyword)
+    }
 }
 
 //MARK: - TableView DataSource

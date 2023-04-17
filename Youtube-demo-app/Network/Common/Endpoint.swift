@@ -12,7 +12,6 @@ enum RequestMethod: String {
     case post = "POST"
     case put = "PUT"
     case delete = "DELETE"
-    
 }
 
 protocol Endpoint {
