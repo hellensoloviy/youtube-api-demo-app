@@ -76,7 +76,6 @@ class SearchViewController: UIViewController {
         $state.receive(on: DispatchQueue.main).sink { [weak self] new in
             guard let self = self else { return }
             self.tableView.isHidden = !new.shouldShowList
-//            self.emptyStateView.setup(with: new)
             self.isActionInProgress = false
         }.store(in: &subscriptions)
         
@@ -123,7 +122,6 @@ class SearchViewController: UIViewController {
             self.isActionInProgress = false
             
         } receiveValue: { value in
-            
             self.fullModel = value
             if let items = value.items, !items.isEmpty {
                 self.dataSource = items
@@ -142,7 +140,9 @@ class SearchViewController: UIViewController {
 // MARK: - Last Search
 extension SearchViewController: LastSearchManagerRespondable {
     @objc internal func restoreSearch() {
-        guard let lastSearch = LastSearchManager().restore(), !lastSearch.isEmpty else { return }
+        guard let lastSearch = LastSearchManager().restore(), !lastSearch.isEmpty else {
+            return
+        }
         
         searchSubscription?.cancel()
         search(for: lastSearch)
