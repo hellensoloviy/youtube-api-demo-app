@@ -76,7 +76,6 @@ class SearchViewController: UIViewController {
         $state.receive(on: DispatchQueue.main).sink { [weak self] new in
             guard let self = self else { return }
             self.tableView.isHidden = !new.shouldShowList
-//            self.emptyStateView.setup(with: new)
             self.isActionInProgress = false
         }.store(in: &subscriptions)
         

@@ -10,6 +10,7 @@ import Foundation
 // TODO: - See correct model to get
 // https://developers.google.com/youtube/v3/docs/search/list?apix_params=%7B%22part%22%3A%5B%22Sekiro%22%5D%7D#usage
 //
+
 class PageInfoModel: Codable {
     var totalResults: Int
     var resultsPerPage: Int
@@ -25,7 +26,7 @@ class VideoModel: Codable {
     var title: String
     var description: String
     
-    var thumbnails: VideoThumbnailsModel? // medium ?
+    var thumbnails: VideoThumbnailsModel? //TODO: - medium ?
     
     enum CodingKeys: String, CodingKey {
         case channelId, title, description, thumbnails
